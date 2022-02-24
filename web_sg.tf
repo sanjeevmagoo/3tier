@@ -1,5 +1,5 @@
 # Creating Security Group 
-resource "aws_security_group" "demosg" {
+resource "aws_security_group" "ALB" {
   vpc_id = "${aws_vpc.demovpc.id}"
 
   # Inbound Rules
@@ -37,6 +37,6 @@ resource "aws_security_group" "demosg" {
   }
 
   tags = {
-    Name = "Web SG"
+    Name = "Web SG for ALB"
   }
 }
