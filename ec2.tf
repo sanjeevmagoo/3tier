@@ -4,9 +4,9 @@ resource "aws_instance" "demoinstance" {
   ami                         = "ami-02c2fbfdd8d306059"
   instance_type               = "t2.micro"
   key_name                    = "new-186"
-  vpc_security_group_ids      = ["${aws_security_group.ALB.id}"]
+  vpc_security_group_ids      = ["${aws_security_group.EC2.id}"]
   subnet_id                   = "${aws_subnet.private-subnet-3.id}"
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   #user_data                   = "${file("data.sh")}"
   
   tags = {
